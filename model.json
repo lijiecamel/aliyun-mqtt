@@ -1,0 +1,364 @@
+{
+  "schema": "https://iotx-tsl.oss-ap-southeast-1.aliyuncs.com/schema.json",
+  "profile": {
+    "productKey": "a13Hg1flchM"
+  },
+  "properties": [
+    {
+      "identifier": "remain_storage",
+      "name": "剩余存储空间",
+      "accessMode": "r",
+      "required": false,
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "min": "0",
+          "max": "256",
+          "unit": "GB",
+          "step": "0.1"
+        }
+      }
+    },
+    {
+      "identifier": "UpTime",
+      "name": "开机时间",
+      "accessMode": "r",
+      "required": false,
+      "dataType": {
+        "type": "int",
+        "specs": {
+          "min": "1",
+          "max": "2147483647",
+          "unit": "min",
+          "step": "1"
+        }
+      }
+    },
+    {
+      "identifier": "cpu_usage",
+      "name": "CPU使用率",
+      "accessMode": "r",
+      "required": false,
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "min": "0",
+          "max": "100",
+          "unit": "%",
+          "step": "0.1"
+        }
+      }
+    },
+    {
+      "identifier": "dc_current",
+      "name": "直流电流",
+      "accessMode": "r",
+      "required": false,
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "min": "0",
+          "max": "1000.0",
+          "unit": "A",
+          "step": "0.1"
+        }
+      }
+    },
+    {
+      "identifier": "dc_voltage",
+      "name": "直流电压",
+      "accessMode": "r",
+      "required": false,
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "min": "0.0",
+          "max": "1000.0",
+          "unit": "V",
+          "step": "0.1"
+        }
+      }
+    },
+    {
+      "identifier": "cpu_temperature",
+      "name": "CPU温度",
+      "accessMode": "r",
+      "required": false,
+      "dataType": {
+        "type": "float",
+        "specs": {
+          "min": "0",
+          "max": "100",
+          "unit": "°C",
+          "step": "0.1"
+        }
+      }
+    }
+  ],
+  "events": [
+    {
+      "identifier": "post",
+      "name": "post",
+      "type": "info",
+      "required": true,
+      "desc": "属性上报",
+      "method": "thing.event.property.post",
+      "outputData": [
+        {
+          "identifier": "remain_storage",
+          "name": "剩余存储空间",
+          "dataType": {
+            "type": "float",
+            "specs": {
+              "min": "0",
+              "max": "256",
+              "unit": "GB",
+              "step": "0.1"
+            }
+          }
+        },
+        {
+          "identifier": "UpTime",
+          "name": "开机时间",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "1",
+              "max": "2147483647",
+              "unit": "min",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "cpu_usage",
+          "name": "CPU使用率",
+          "dataType": {
+            "type": "float",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "unit": "%",
+              "step": "0.1"
+            }
+          }
+        },
+        {
+          "identifier": "dc_current",
+          "name": "直流电流",
+          "dataType": {
+            "type": "float",
+            "specs": {
+              "min": "0",
+              "max": "1000.0",
+              "unit": "A",
+              "step": "0.1"
+            }
+          }
+        },
+        {
+          "identifier": "dc_voltage",
+          "name": "直流电压",
+          "dataType": {
+            "type": "float",
+            "specs": {
+              "min": "0.0",
+              "max": "1000.0",
+              "unit": "V",
+              "step": "0.1"
+            }
+          }
+        },
+        {
+          "identifier": "cpu_temperature",
+          "name": "CPU温度",
+          "dataType": {
+            "type": "float",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "unit": "°C",
+              "step": "0.1"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "services": [
+    {
+      "identifier": "set",
+      "name": "set",
+      "required": true,
+      "callType": "async",
+      "desc": "属性设置",
+      "method": "thing.service.property.set",
+      "inputData": [],
+      "outputData": []
+    },
+    {
+      "identifier": "get",
+      "name": "get",
+      "required": true,
+      "callType": "async",
+      "desc": "属性获取",
+      "method": "thing.service.property.get",
+      "inputData": [
+        "remain_storage",
+        "UpTime",
+        "cpu_usage",
+        "dc_current",
+        "dc_voltage",
+        "cpu_temperature"
+      ],
+      "outputData": [
+        {
+          "identifier": "remain_storage",
+          "name": "剩余存储空间",
+          "dataType": {
+            "type": "float",
+            "specs": {
+              "min": "0",
+              "max": "256",
+              "unit": "GB",
+              "step": "0.1"
+            }
+          }
+        },
+        {
+          "identifier": "UpTime",
+          "name": "开机时间",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "1",
+              "max": "2147483647",
+              "unit": "min",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "cpu_usage",
+          "name": "CPU使用率",
+          "dataType": {
+            "type": "float",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "unit": "%",
+              "step": "0.1"
+            }
+          }
+        },
+        {
+          "identifier": "dc_current",
+          "name": "直流电流",
+          "dataType": {
+            "type": "float",
+            "specs": {
+              "min": "0",
+              "max": "1000.0",
+              "unit": "A",
+              "step": "0.1"
+            }
+          }
+        },
+        {
+          "identifier": "dc_voltage",
+          "name": "直流电压",
+          "dataType": {
+            "type": "float",
+            "specs": {
+              "min": "0.0",
+              "max": "1000.0",
+              "unit": "V",
+              "step": "0.1"
+            }
+          }
+        },
+        {
+          "identifier": "cpu_temperature",
+          "name": "CPU温度",
+          "dataType": {
+            "type": "float",
+            "specs": {
+              "min": "0",
+              "max": "100",
+              "unit": "°C",
+              "step": "0.1"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "identifier": "overall_lamp",
+      "name": "全体灯光效果",
+      "required": false,
+      "callType": "async",
+      "method": "thing.service.overall_lamp",
+      "inputData": [
+        {
+          "identifier": "effectId",
+          "name": "效果编号",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "0",
+              "max": "10000",
+              "step": "1"
+            }
+          }
+        }
+      ],
+      "outputData": []
+    },
+    {
+      "identifier": "single_lamp",
+      "name": "单个灯光控制",
+      "required": false,
+      "callType": "async",
+      "method": "thing.service.single_lamp",
+      "inputData": [
+        {
+          "identifier": "row",
+          "name": "行",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "1",
+              "max": "100000",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "col",
+          "name": "列",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "1",
+              "max": "100000000",
+              "step": "1"
+            }
+          }
+        },
+        {
+          "identifier": "effectId",
+          "name": "灯效编号",
+          "dataType": {
+            "type": "int",
+            "specs": {
+              "min": "1",
+              "max": "1111111111",
+              "step": "1"
+            }
+          }
+        }
+      ],
+      "outputData": []
+    }
+  ]
+}
