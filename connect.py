@@ -20,10 +20,10 @@ def on_disconnect(rc, userdata):
 
 lk = linkkit.LinkKit(
     host_name="cn-shanghai",
-    product_key="a13Hg1flchM",
-    device_name="ubuntu_test",
-    device_secret="da2ccf257c001749add519f5387a79e2",
-    product_secret="YGQXOcOQXoSP5D4L")
+    product_key="",
+    device_name="",
+    device_secret="",
+    product_secret="")
 
 lk.thing_setup("model.json") #配置文件 
 
