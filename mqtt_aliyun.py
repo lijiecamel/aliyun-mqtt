@@ -18,10 +18,10 @@ class CustomerThing(object):
     def __init__(self):
         self.__linkkit = linkkit.LinkKit(
             host_name="cn-shanghai",
-            product_key="a13Hg1flchM",
-            device_name="ubuntu_test",
-            device_secret="da2ccf257c001749add519f5387a79e2")
-            # product_secret="YGQXOcOQXoSP5D4L"
+            product_key="xxxxxxxx",
+            device_name="xxxxxx",
+            device_secret="xxxxxxxxxxxxxxxx")
+            # product_secret="xxxxxxx"
 
         self.__linkkit.enable_logger(logging.DEBUG)
         # self.__linkkit.on_device_dynamic_register = self.on_device_dynamic_register
